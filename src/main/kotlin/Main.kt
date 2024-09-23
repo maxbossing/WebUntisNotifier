@@ -16,6 +16,8 @@ suspend fun main() = coroutineScope {
     val config = loadConfig() ?: error("cannot read config")
     config.also { (untis: Untis, pushover: Pushover) ->
 
+        sendMessage(pushover, "WebUntisNotifier started")
+
         launch(Dispatchers.IO) {
             delay(24.hours)
             cancelledLessonCache.clear()
