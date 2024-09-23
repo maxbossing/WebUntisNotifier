@@ -1,5 +1,5 @@
-FROM openjdk:22-jdk-alpine
+FROM eclipse-temurin:22
 
 COPY build/libs/WebUntisNotifier.jar WebUntisNotifier.jar
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/WebUntisNotifier.jar"]
