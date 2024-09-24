@@ -2,6 +2,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlin.io.path.*
+import kotlin.time.Duration
 
 
 @Serializable
@@ -16,6 +17,7 @@ data class Untis(
     val school: String,
     val username: String,
     val password: String,
+    val refreshDelaySeconds: Int = 5 * 60
 )
 
 @Serializable

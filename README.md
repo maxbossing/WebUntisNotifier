@@ -3,6 +3,8 @@
 Send notifications when lessons are cancelled in WebUntis, because they dont seem to be able to do that themselves.
 
 ## Usage
+> You will probably have to adapt LessonParser.kt/lessonMap to fit your schedule, as it is currently hardcoded on the times of mine
+
 1. Build the Project
 2. Build the Docker Container
 3. Mount your config.json at /config.json
