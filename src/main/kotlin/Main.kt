@@ -21,7 +21,7 @@ suspend fun main() = coroutineScope {
     val config = loadConfig() ?: error("cannot read config")
     config.also { (untis: Untis, pushover: Pushover) ->
 
-        Napier.i("WebUntisNotifier initialized")
+        Napier.i("WebUntisNotifier v3 initialized")
 
         launch(Dispatchers.Default) {
             delay(24.hours)
@@ -33,8 +33,8 @@ suspend fun main() = coroutineScope {
                 closingUntisSession(untis) { session ->
                     Napier.i("attempting to get timetable information")
                     val timetable = session.getTimetableFromPersonId(
-                        LocalDate.now().minusDays(1),
-                        LocalDate.now().minusDays(1),
+                        LocalDate.now(),
+                        LocalDate.now(),
                         session.infos.personId
                     ).apply { sortByStartTime() }
 
