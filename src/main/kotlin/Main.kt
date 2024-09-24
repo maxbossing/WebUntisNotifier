@@ -33,8 +33,8 @@ suspend fun main() = coroutineScope {
                 closingUntisSession(untis) { session ->
                     Napier.i("attempting to get timetable information")
                     val timetable = session.getTimetableFromPersonId(
-                        LocalDate.now().minusDays(1),
-                        LocalDate.now().minusDays(1),
+                        LocalDate.now(),
+                        LocalDate.now(),
                         session.infos.personId
                     ).apply { sortByStartTime() }
 
