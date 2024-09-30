@@ -49,7 +49,7 @@ suspend fun main() = coroutineScope {
                         }
                 }
             }
-            delay(10.seconds)
+            delay(config.untis.refreshDelaySeconds.seconds)
         }
 
     }
