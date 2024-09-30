@@ -6,8 +6,8 @@ plugins {
 }
 
 repositories {
-    maven("https://repo.exobyte.dev/releases")
     mavenCentral()
+    maven("https://repo.exobyte.dev/releases")
 }
 
 dependencies {
@@ -17,8 +17,7 @@ dependencies {
     implementation("io.ktor", "ktor-client-core", "2.3.12")
     implementation("io.ktor", "ktor-client-cio", "2.3.12")
 
-    implementation("io.github.aakira", "napier", "2.7.1")
-
+    implementation("com.toddway.shelf" , "Shelf", "2.0.7")
     implementation("org.bytedream", "untis4j", "1.3.5")
 }
 
