@@ -6,6 +6,7 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import ktor
 import notifications.AbstractNotificationProvider
+import utils.i
 
 class NtfyNotificationProvider(private val config: NtfyNotificationConfig) : AbstractNotificationProvider<NtfyNotificationConfig>(config) {
     override suspend fun sendMessage(message: String) {
@@ -18,7 +19,7 @@ class NtfyNotificationProvider(private val config: NtfyNotificationConfig) : Abs
                 basicAuth(config.username, config.password)
             }
         }.let { response ->
-            println("i(NtfyRequest): status=${response.status}, message=${response.bodyAsText()}")
+            i("(NtfyRequest): status=${response.status}, message=${response.bodyAsText()}")
         }
     }
 }
