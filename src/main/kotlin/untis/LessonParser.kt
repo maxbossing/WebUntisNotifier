@@ -55,7 +55,7 @@ fun Lesson.parseChange(): List<LessonChange>? {
     }
 
     (originalRooms.isEmpty()).ifFalse {
-        changes += LessonChange(LessonChangeType.ROOM, time, name, rooms[0].longName)
+        changes += LessonChange(LessonChangeType.ROOM, time, name, rooms[0].name)
         d("found changed room ($time, $name)")
     }
 
