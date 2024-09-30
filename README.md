@@ -2,6 +2,8 @@
 
 Send notifications when lessons are cancelled in WebUntis, because they dont seem to be able to do that themselves.
 
+> For support and feature requests, [join my discord](https://discord.com/invite/qETwkZWZrf)!
+
 ## Usage
 > You will probably have to adapt LessonParser.kt/lessonMap to fit your schedule, as it is currently hardcoded on the times of mine
 
@@ -22,10 +24,30 @@ Send notifications when lessons are cancelled in WebUntis, because they dont see
     "password": "Your WebUntis password",
     "server": "The WebUntis Server of your school (ex: https://hektor.webuntis.com)"
   },
-  "pushover": {
-    "apiKey": "Your pushover API key",
-    "groupKey": "The Group/User Key to send notifications to "
+  "notifications": {
+    see ###notifications
   }
+}
+```
+### Notifications
+WebUntisNotifier currently only supports Pushover and Ntfy as notification provider. 
+> If you need/want a different one, add it (its very easy!) or hit me up on my discord!
+#### Pushover
+```json
+"notifications": {
+  "type": "Pushover",
+  "apiKey": "Your api key",
+  "groupKey": "Your group to send messages to"      
+}
+```
+#### Ntfy
+```json
+"notifications": {
+  "type": "Ntfy",
+  "url": "Your ntfy URL",
+  "topic": "The ntfy topic to send messages to",
+  "username": "Username for your account. If set to null, password will be treated as a bearer token",
+  "password": "Your password/Bearer token"
 }
 ```
 
