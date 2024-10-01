@@ -4,56 +4,12 @@ Send notifications when lessons are changed in WebUntis, because they dont seem 
 
 > For support and feature requests, [join my discord](https://discord.com/invite/qETwkZWZrf)!
 
-## Usage
-> You will probably have to adapt LessonParser.kt/lessonMap to fit your schedule, as it is currently hardcoded on the times of mine
-
-1. Build the Project
-2. Build the Docker Container
-3. Mount your config.json at /config.json
-4. Start the container
-5. ...
-6. Profit
-
-## Configuration
-
-```json
-{
-  "untis": {
-    "school": "The name your school uses in WebUntis",
-    "username": "Your WebUntis username",
-    "password": "Your WebUntis password",
-    "server": "The WebUntis Server of your school (ex: https://hektor.webuntis.com)"
-  },
-  "notifications": {
-    see ###notifications
-  }
-}
-```
-### Notifications
-WebUntisNotifier currently only supports Pushover and Ntfy as notification provider. 
-> If you need/want a different one, add it (its very easy!) or hit me up on my discord!
-#### Pushover
-```json
-"notifications": {
-  "type": "Pushover",
-  "apiKey": "Your api key",
-  "groupKey": "Your group to send messages to"      
-}
-```
-#### Ntfy
-```json
-"notifications": {
-  "type": "Ntfy",
-  "url": "Your ntfy URL",
-  "topic": "The ntfy topic to send messages to",
-  "username": "Username for your account. If set to null, password will be treated as a bearer token",
-  "password": "Your password/Bearer token"
-}
-```
+> Check out the [Wiki](https://wiki.exobyte.dev/books/projects/chapter/webuntisnotifier) for information on how to setup/configure WebUntisNotifier.
 
 ## Todo
 - [ ] More notification providers
 - [ ] Support for Lesson Messages
+- [x] Make the Lesson Start times configurable
 - [ ] Detect Moved lessons
 - [ ] Public docker containers
 
