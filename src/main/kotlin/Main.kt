@@ -6,6 +6,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import notifications.impl.NtfyNotificationProvider
 import notifications.impl.PushoverNotificationProvider
+import notifications.impl.DiscordNotificationProvider
 import store.LessonNotificationStore
 import untis.LessonParser
 import untis.closingUntisSession
@@ -41,7 +42,13 @@ suspend fun main() = coroutineScope {
             i("initializing Ntfy notification provider")
             NtfyNotificationProvider(config.notifications)
         }
+        is DiscordNotificationConfig -> {
+            i("initializing Discord notification provider")
+            DiscordNotificationProvider(config.notifications)
+        }
     }
+
+    val lessonParser = LessonParser(config.timetable)
 
     launch {
         while (isActive) {

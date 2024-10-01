@@ -21,3 +21,10 @@ data class NtfyNotificationConfig(
     val username: String?,
     val password: String,
 ): NotificationConfig
+
+@Serializable
+@SerialName("Discord")
+data class DiscordNotificationConfig(
+    val webhookUrl: String,
+): NotificationConfig
+
