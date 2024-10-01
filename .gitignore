@@ -1,4 +1,4 @@
 .gradle/
 .kotlin/
 build/
-./config.json
+config.json
