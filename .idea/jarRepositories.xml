@@ -26,5 +26,15 @@
       <option name="name" value="maven" />
       <option name="url" value="https://repo.exobyte.dev/releases" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://maven.pkg.github.com/untisapi/untis4j" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://jitpack.io" />
+    </remote-repository>
   </component>
 </project>
