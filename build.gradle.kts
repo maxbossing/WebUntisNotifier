@@ -7,7 +7,7 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven("https://repo.exobyte.dev/releases")
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -19,7 +19,7 @@ dependencies {
     implementation("io.ktor", "ktor-client-cio", "2.3.12")
 
     implementation("com.toddway.shelf" , "Shelf", "2.0.7")
-    implementation("org.bytedream", "untis4j", "1.3.5")
+    implementation("com.github.untisapi", "untis4j", "1.3.5")
 }
 
 
