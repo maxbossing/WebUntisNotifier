@@ -11,12 +11,3 @@ fun Path.createIfNotExists() {
         createFile()
     }
 }
-
-fun Path.createDirIfNotExists() {
-    if (!exists()) {
-        if (!parent.exists()) {
-            parent.createDirectories()
-        }
-        createDirectory()
-    }
-}
