@@ -66,7 +66,7 @@ suspend fun main() = coroutineScope {
                 val timeTable = session.todaysTimetable().apply { sortByStartTime() }
                 for (lesson in timeTable) {
                     (lessonParser.parseChange(lesson) ?: continue)
-                        .filterNot { LessonNotificationStore.has(it.lessonTime).ifTrue { println("d: non-normal lesson (${it.lessonTime}, ${it.lessonName}) has already been noticed") } }
+                        .filterNot { LessonNotificationStore.has(it.lessonTime).ifTrue { d("non-normal lesson (${it.lessonTime}, ${it.lessonName}) has already been noticed") } }
                         .forEach {
                             LessonNotificationStore.add(it.lessonTime)
                             notificationProvider.sendChanges(it)
