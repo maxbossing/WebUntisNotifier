@@ -11,10 +11,12 @@ import store.LessonNotificationStore
 import untis.LessonParser
 import untis.closingUntisSession
 import untis.todaysTimetable
+import utils.d
 import utils.e
 import utils.i
 import utils.ifTrue
 import kotlin.properties.Delegates
+import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.seconds
 
 val ktor by lazy { HttpClient(CIO) }
@@ -49,6 +51,14 @@ suspend fun main() = coroutineScope {
     }
 
     val lessonParser = LessonParser(config.timetable)
+
+    launch {
+        while(isActive) {
+            d("Clearing Lesson store")
+            LessonNotificationStore.clear()
+            delay(7.days) // I hope this handles errors well enough to ever achieve 7 days uptime
+        }
+    }
 
     launch {
         while (isActive) {
