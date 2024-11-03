@@ -11,7 +11,7 @@ Send notifications when lessons are changed in WebUntis, because they dont seem 
 - [ ] Support for Lesson Messages
 - [x] Make the Lesson Start times configurable
 - [ ] Detect Moved lessons
-- [ ] Public docker containers
+- [x] Public docker containers
 
 ## License
 
