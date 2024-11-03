@@ -4,8 +4,6 @@ Send notifications when lessons are changed in WebUntis, because they dont seem 
 
 > For support and feature requests, [join my discord](https://discord.com/invite/qETwkZWZrf)!
 
-> Check out the [Wiki](https://wiki.exobyte.dev/books/projects/chapter/webuntisnotifier) for information on how to setup/configure WebUntisNotifier.
-
 ## Todo
 - [ ] More notification providers
 - [ ] Support for Lesson Messages
